@@ -2,7 +2,6 @@
   <h1>掲示板一覧</h1>
   <div class="ml-auto boards__linkBox">
     <%= link_to '新規作成',new_board_path, class: 'btn btn-outline-dark'%>
-    <%= link_to '編集', edit_board_path(@board), class: 'btn btn-outline-dark'%>
   </div>
 </div>
 <table class="table table-hover boards__table">
@@ -25,6 +24,7 @@
       <td><%= board.created_at.to_s(:datetime_jp) %></td>
       <td><%= board.updated_at.to_s(:datetime_jp) %></td>
       <td><%= link_to '詳細',board, class: 'btn btn-outline-dark' %></td>
+      <td><%= link_to '削除',board, class: 'btn btn-outline-dark', method: :delete %></td>
     </tr>
     <% end %>
   </tbody>

@@ -1,8 +1,7 @@
-div class="d-flex align-items-center">
+<div class="d-flex align-items-center">
   <h1>掲示板編集</h1>
   <div class="ml-auto boards__linkBox">
     <%= link_to '一覧', boards_path, class: 'btn btn-outline-dark' %>
   </div>
 </div>
-    <%= render 'form',form :form %>
-<% end %>
+    <%= render partial: 'form' , locals: {board: @board} %>
