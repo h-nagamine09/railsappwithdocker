@@ -1,7 +1,7 @@
 class BoardsController < ApplicationController
   before_action :set_target_board, only: %i[show edit update destroy]
  def index
-   @boards = Board.all
+   @boards = Board.page(params[:page])
  end
 
  def show
@@ -12,11 +12,9 @@ class BoardsController < ApplicationController
  end
 
  def create
-   @board = Board.create(board_params)
-   if @board.save
-     redirect_to @board, notice: '投稿しました'
-   else
-     render 'new'
+   board = Board.create(board_params)
+     flash[notice:] = "#{board.title} を投稿しました"
+     redirect_to board
    end
  end
 
@@ -28,7 +26,7 @@ class BoardsController < ApplicationController
  def destroy
    @board.delete
 
-   redirect_to boards_path
+   redirect_to boards_path,flash: {notice: "#{board.title}を削除しました"
  end
 
  private
