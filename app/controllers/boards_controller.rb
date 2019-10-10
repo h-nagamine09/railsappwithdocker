@@ -13,9 +13,14 @@ class BoardsController < ApplicationController
  end
 
  def create
-   board = Board.create(board_params)
-   flash[:notice] = "#{board.title}の掲示板を変更しました"
-   redirect_to board
+   board = Board.new(borad_params)
+   if Board.save
+     flash[:notice] = "#{board.title}の掲示板を変更しました"
+     redirect_to board
+   else
+     redirect_to new_board_path, flash: {
+       error_message: board.errors.full_message
+     }
  end
 
  def update

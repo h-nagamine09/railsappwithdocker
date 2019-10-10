@@ -36,6 +36,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'kaminari'
+  gem 'rails-i18n'
 end
 
 group :development do
