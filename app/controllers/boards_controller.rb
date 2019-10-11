@@ -21,6 +21,7 @@ class BoardsController < ApplicationController
      redirect_to new_board_path, flash: {
        error_message: board.errors.full_message
      }
+   end
  end
 
  def update
