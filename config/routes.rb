@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments__skip/template-engine'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get 'boards', to: 'boards#index'
   # get 'boards/new', to: 'boards#new'
@@ -6,4 +8,5 @@ Rails.application.routes.draw do
   # get 'boards/:id', to: 'boards#show'
 
   resources :boards
+  resources :comments, only: [:create, :destroy]
 end

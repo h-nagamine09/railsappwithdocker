@@ -6,6 +6,7 @@ class BoardsController < ApplicationController
  end
 
  def show
+   @comment = @board.comments.new #boardに紐づいた新しいコメントを作成
  end
 
  def new

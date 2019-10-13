@@ -1,9 +1,9 @@
 ja:
   activerecord:
-    attrivutes:
+    attributes:
       board:
         name: 名前
-        title:　タイトル
+        title: タイトル
         body: 本文
   views:
     pagination:
