@@ -37,6 +37,7 @@ group :development, :test do
 
   gem 'kaminari'
   gem 'rails-i18n'
+  gem 'rails-flog',require: 'flog'
 end
 
 group :development do
