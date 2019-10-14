@@ -4175,3 +4175,101 @@ Processing by BoardsController#show as HTML
 Completed 200 OK in 248ms (Views: 226.4ms | ActiveRecord: 0.4ms)
 
 
+Started POST "/comments" for 172.20.0.1 at 2019-10-14 13:01:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"xgM7bFiEtANesS+dnY2jS6vCSjpJTB9QMGs39qJz59thHf7dqqqjQwVKrRTFuCfU81DdHoAf9QO5wQO5F1jW1g=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m"test"[0m,
+         "comment"[0;37m => [0m[0;33m"kれはテスト"[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32m
+	INSERT
+	INTO
+		`comments` (
+			`board_id`
+			,`name`
+			,`comment`
+			,`created_at`
+			,`updated_at`
+		)
+	VALUES (
+		1
+		,'test'
+		,'kれはテスト'
+		,'2019-10-14 13:01:29'
+		,'2019-10-14 13:01:29'
+	)[0m
+  [1m[35m (2.4ms)[0m  [1m[35m
+	COMMIT[0m
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 109ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-14 13:01:29 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.9ms)
+  [1m[36mComment Load (1.7ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.3ms)
+  Rendered boards/_comment_form.html.erb (1.7ms)
+  Rendered boards/show.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 3864ms (Views: 3847.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-14 13:03:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.9ms)
+  [1m[36mComment Load (0.8ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.8ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  Rendered boards/show.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 304ms (Views: 282.2ms | ActiveRecord: 1.4ms)
+
+

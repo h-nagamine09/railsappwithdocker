@@ -9,4 +9,10 @@
  <div class="alert alert-primary"><%= flash[:notice] %></div>
 <%end%>
 <%= render @board %>
-<%= render partial: 'comment_form',locals: {comment: @comment} %>
+<div class="p-coment_list">
+  <div class="p-comment_listTitle">
+    コメント
+    <%= render @board.comments %>
+  </div>
+</div>
+<%= render partial: 'comments/form',locals: {comment: @comment} %>
