@@ -4273,3 +4273,1088 @@ Processing by BoardsController#show as HTML
 Completed 200 OK in 304ms (Views: 282.2ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/" for 172.20.0.1 at 2019-10-15 09:35:15 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (4.0ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`. *
+	FROM
+		`schema_migrations`[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /usr/local/bundle/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/bundle/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 24ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/boards" for 172.20.0.1 at 2019-10-15 09:35:20 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#index as HTML
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards` LIMIT 10 OFFSET 0[0m
+  [1m[35m (0.4ms)[0m  [1m[34m
+	SELECT
+		COUNT( * )
+	FROM
+		`boards`[0m
+  Rendered boards/index.html.erb within layouts/application (377.6ms)
+Completed 200 OK in 3744ms (Views: 3709.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:41:14 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 1.7ms)
+
+
+  
+SyntaxError (/app/app/models/comment.rb:4: syntax error, unexpected ':', expecting keyword_end
+  validates: :name, presence: true, length
+            ^
+/app/app/models/comment.rb:4: Can't assign to true
+idates: :name, presence: true, length: { maximum :10}
+                              ^
+/app/app/models/comment.rb:5: Can't assign to true
+tes: :comment, presence: true, length: {maximum :140}
+                              ^):
+  
+app/models/comment.rb:4: syntax error, unexpected ':', expecting keyword_end
+app/models/comment.rb:4: Can't assign to true
+app/models/comment.rb:5: Can't assign to true
+app/controllers/boards_controller.rb:9:in `show'
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.9ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.7ms)
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:42:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/app/app/models/comment.rb:4: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+nce: true, length: { maximum :10}
+                              ^
+/app/app/models/comment.rb:5: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+ence: true, length: {maximum :140}
+                              ^):
+  
+app/models/comment.rb:4: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/comment.rb:5: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/controllers/boards_controller.rb:9:in `show'
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.4ms)
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:42:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/app/app/models/comment.rb:4: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+nce: true, length: { maximum :10}
+                              ^
+/app/app/models/comment.rb:5: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+ence: true, length: {maximum :140}
+                              ^):
+  
+app/models/comment.rb:4: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/models/comment.rb:5: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/controllers/boards_controller.rb:9:in `show'
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.4ms)
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:43:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.9ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (9.6ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (26.9ms)
+  Rendered boards/show.html.erb within layouts/application (117.2ms)
+Completed 200 OK in 452ms (Views: 369.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:43:09 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"H2Xyrb6RjZqwfB//Q5DLmLBXkf1ahMT5QIIp/LbKuA+4ezccTL+a2uuHnXYbpU8H6MUG2ZPXLqrJKB2zA+GJAg=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.4ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+Completed 500 Internal Server Error in 330ms (ActiveRecord: 1.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 2)):
+  
+app/controllers/comments_controller.rb:10:in `create'
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.3ms)
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:43:41 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"H2Xyrb6RjZqwfB//Q5DLmLBXkf1ahMT5QIIp/LbKuA+4ezccTL+a2uuHnXYbpU8H6MUG2ZPXLqrJKB2zA+GJAg=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 60ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:43:41 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.3ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (11.9ms)
+  Rendered boards/show.html.erb within layouts/application (56.2ms)
+Completed 200 OK in 276ms (Views: 260.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:43:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"qtLDujAQpihgzATteFNGoCnvH9BH8Nk5kEomlhHhjakNzAYLwj6xaDs3hmQgZsI/cX2I9I6jM2oZ4BLZpMq8pA=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 23ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:43:43 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (1.1ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.6ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (11.2ms)
+  Rendered boards/show.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 277ms (Views: 261.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:43:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"S5ngiVT7bFC6UFiyGgyGhQPe/SSbydctzbMx2b76X0nshyU4ptV7EOGr2jtCOQIaW0xqAFKaPX5EGQWWC9FuRA=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 13ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:43:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.4ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (14.7ms)
+  Rendered boards/show.html.erb within layouts/application (57.3ms)
+Completed 200 OK in 261ms (Views: 244.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:46:41 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"jChk1655X2rogAsPRkLJ3OZtEqRoZe/QQ6iOb0FwwD8rNqFmXFdIKrN7iYYed01Dvv+FgKE2BYPKArog9FvxMg=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 13ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:46:41 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (1.2ms)
+  [1m[36mComment Load (0.8ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.4ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (25.1ms)
+  Rendered boards/show.html.erb within layouts/application (81.4ms)
+Completed 200 OK in 473ms (Views: 453.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:46:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"GTh7uWWts/VCf0jwIn6CkPWupvcnSNh2U3kcNQ+Kfx6+Jr4Il4OktRmEynl6SwYPrTwx0+4bMiXa0yh6uqFOEw=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 14ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:46:51 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (1.2ms)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.2ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (13.4ms)
+  Rendered boards/show.html.erb within layouts/application (60.9ms)
+Completed 200 OK in 282ms (Views: 266.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:50:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"1EG1nRq6UHQe86H7xMxoTFZIHCYK2qrlwqeH5djz2X5zX3As6JRHNEUII3Kc+ezTDtqLAsOJQLZLDbOqbdjocw=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 60ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:50:38 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.3ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (11.4ms)
+  Rendered boards/show.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 283ms (Views: 265.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:50:44 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.9ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.5ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (13.1ms)
+  Rendered boards/show.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 264ms (Views: 249.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:50:55 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"goRn4MfLlRkPgQE5AsnjuHr+SGhvA/SMevMwYd4/xlslmqJRNeWCWVR6g7Ba/GcnImzfTKZQHt/zWQQuaxT3Vg=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m"テスト5"[0m,
+         "comment"[0;37m => [0m[0;33m"これはてすとですよ"[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32m
+	INSERT
+	INTO
+		`comments` (
+			`board_id`
+			,`name`
+			,`comment`
+			,`created_at`
+			,`updated_at`
+		)
+	VALUES (
+		1
+		,'テスト5'
+		,'これはてすとですよ'
+		,'2019-10-15 09:50:55'
+		,'2019-10-15 09:50:55'
+	)[0m
+  [1m[35m (2.7ms)[0m  [1m[35m
+	COMMIT[0m
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 27ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:50:55 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [3 times] (1.6ms)
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered comments/_form.html.erb (11.3ms)
+  Rendered boards/show.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 261ms (Views: 243.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:51:49 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"vD3irZfvWY+sWj1ghqy/VrcCWdVYS78nH57mwWqs7VcbIyccZcFOz/ehv+nemTvJ75DO8ZEYVXSWNNKO34fcWg=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 66ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:51:49 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [3 times] (1.5ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (10.7ms)
+  Rendered boards/show.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 232ms (Views: 216.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:51:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"YcQ4dMnPLk+embYNzexfMeDlAhjrPzJS63/5aMEIM0TG2v3FO+E5D8ViNISV2duuuHeVPCJs2AFi1c0ndCMCSQ=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 19ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:51:52 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [3 times] (1.4ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (10.5ms)
+  Rendered boards/show.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 244ms (Views: 228.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:54:03 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"/j6AqasSq4SSRxf5b0uawUgWxY8VpyqAn6MKL/pGZEdZIEUYWTy8xMm8lXA3fh5eEIRSq9z0wNMWCT5gT21VSg=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m"１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１１"[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 14ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:54:03 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.9ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [3 times] (1.6ms)
+  Rendered shared/_error_messages.html.erb (0.3ms)
+  Rendered comments/_form.html.erb (10.0ms)
+  Rendered boards/show.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 257ms (Views: 237.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:57:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"0+uXdid7QMKFlJE2OGngwe3r/c3Fixtiz68vPRxxtkF09VLH1VVXgt5vE79gXGRetXlq6QzY8TFGBRtyqVqHTA=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 55ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:57:06 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.9ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [3 times] (1.5ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (9.7ms)
+  Rendered boards/show.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 226ms (Views: 210.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 09:57:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"2vWwtPK9Ef2SowN5/XMBGUinzclIbUoLFG/7Wd0pHWJ963UFAJMGvclYgfClRoWGEDVa7YE+oFidxc8WaAIsbw=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.5ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 352ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 09:57:28 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [3 times] (1.5ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered comments/_form.html.erb (10.7ms)
+  Rendered boards/show.html.erb within layouts/application (151.6ms)
+Completed 200 OK in 347ms (Views: 331.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/comments" for 172.20.0.1 at 2019-10-15 10:01:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: 
+{
+                  "utf8"[0;37m => [0m[0;33m"✓"[0m,
+    "authenticity_token"[0;37m => [0m[0;33m"pkCHY1HwE8u5xbYCHhn6pXbNhzAIKFtsBVKKvA4AHa4BXkLSo94Ei+I+NItGLH46Ll8QFMF7sT+M+L7zuyssow=="[0m,
+               "comment"[0;37m => [0m{
+        "board_id"[0;37m => [0m[0;33m"1"[0m,
+            "name"[0;37m => [0m[0;33m""[0m,
+         "comment"[0;37m => [0m[0;33m""[0m
+    },
+                "commit"[0;37m => [0m[0;33m"送信"[0m
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+DEPRECATION WARNING: `redirect_to :back` is deprecated and will be removed from Rails 5.1. Please use `redirect_back(fallback_location: fallback_location)` where `fallback_location` represents the location to use if the request has no HTTP referer information. (called from create at /app/app/controllers/comments_controller.rb:8)
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 59ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 10:01:24 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [3 times] (0.7ms)
+  Rendered boards/show.html.erb within layouts/application (33.3ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/app/app/views/comments/_comment.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+pend=(link_to '削除' comment, method: :delete, data: {conf
+                              ^):
+  
+app/views/comments/_comment.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/boards/show.html.erb:15:in `_app_views_boards_show_html_erb___390448028048262160_70128751222120'
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/bundle/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 10:02:48 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [3 times] (2.0ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (13.3ms)
+  Rendered boards/show.html.erb within layouts/application (54.3ms)
+Completed 200 OK in 261ms (Views: 242.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/comments/3" for 172.20.0.1 at 2019-10-15 10:02:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#destroy as HTML
+  Parameters: 
+{
+    "authenticity_token"[0;37m => [0m[0;33m"Iqo5TvlN5Ig8Ywgs9LQzw2cVgP6gVb284N9Cr636oheFtPz/C2PzyGeYiqWsgbdcP4cX2mkGV+9pdXbgGNGTGg=="[0m,
+                    "id"[0;37m => [0m[0;33m"3"[0m
+}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[31m
+	DELETE
+	FROM
+		`comments`
+	WHERE
+		`comments`.`id` = 3[0m
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/boards/1
+Completed 302 Found in 27ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/boards/1" for 172.20.0.1 at 2019-10-15 10:02:54 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.6ms)[0m  [1m[34m
+	SELECT
+		`boards`. *
+	FROM
+		`boards`
+	WHERE
+		`boards`.`id` = 1 LIMIT 1[0m
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/_board.html.erb (0.8ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`comments`. *
+	FROM
+		`comments`
+	WHERE
+		`comments`.`board_id` = 1[0m
+  Rendered collection of comments/_comment.html.erb [2 times] (1.5ms)
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered comments/_form.html.erb (11.1ms)
+  Rendered boards/show.html.erb within layouts/application (85.2ms)
+Completed 200 OK in 285ms (Views: 269.6ms | ActiveRecord: 1.0ms)
+
+
