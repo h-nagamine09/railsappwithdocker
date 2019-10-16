@@ -1,0 +1,1150 @@
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (10.6ms)[0m  [1m[35m
+	DROP
+	DATABASE IF EXISTS `app_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	CREATE
+	DATABASE `app_test` DEFAULT CHARACTER
+SET
+	`utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `board_tag_relations` CASCADE[0m
+  [1m[35m (13.9ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`board_tag_relations` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`board_id` INT
+			,`tag_id` INT
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,INDEX `index_board_tag_relations_on_board_id`
+				USING btree (`board_id`)
+			,INDEX `index_board_tag_relations_on_tag_id`
+				USING btree (`tag_id`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `boards` CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`boards` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255)
+			,`title` VARCHAR (255)
+			,`body` text
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `comments` CASCADE[0m
+  [1m[35m (12.2ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`comments` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`board_id` INT
+			,`name` VARCHAR (255) NOT NULL
+			,`comment` text NOT NULL
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,INDEX `index_comments_on_board_id`
+				USING btree (`board_id`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `tags` CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`tags` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255) NOT NULL
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `users` CASCADE[0m
+  [1m[35m (11.3ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`users` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255) NOT NULL
+			,`password_digest` VARCHAR (255)
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,UNIQUE INDEX `index_users_on_name`
+				USING btree (`name`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (23.8ms)[0m  [1m[35m
+	ALTER TABLE
+	`board_tag_relations` ADD CONSTRAINT `fk_rails_1eb07359f9` FOREIGN KEY (`board_id`) REFERENCES `boards` (`id`)
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (25.1ms)[0m  [1m[35m
+	DROP
+	DATABASE IF EXISTS `app_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	CREATE
+	DATABASE `app_test` DEFAULT CHARACTER
+SET
+	`utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `board_tag_relations` CASCADE[0m
+  [1m[35m (12.9ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`board_tag_relations` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`board_id` INT
+			,`tag_id` INT
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,INDEX `index_board_tag_relations_on_board_id`
+				USING btree (`board_id`)
+			,INDEX `index_board_tag_relations_on_tag_id`
+				USING btree (`tag_id`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `boards` CASCADE[0m
+  [1m[35m (8.9ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`boards` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255)
+			,`title` VARCHAR (255)
+			,`body` text
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `comments` CASCADE[0m
+  [1m[35m (9.4ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`comments` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`board_id` INT
+			,`name` VARCHAR (255) NOT NULL
+			,`comment` text NOT NULL
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,INDEX `index_comments_on_board_id`
+				USING btree (`board_id`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `tags` CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`tags` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255) NOT NULL
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `users` CASCADE[0m
+  [1m[35m (9.4ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`users` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255) NOT NULL
+			,`password_digest` VARCHAR (255)
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,UNIQUE INDEX `index_users_on_name`
+				USING btree (`name`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (17.9ms)[0m  [1m[35m
+	ALTER TABLE
+	`board_tag_relations` ADD CONSTRAINT `fk_rails_1eb07359f9` FOREIGN KEY (`board_id`) REFERENCES `boards` (`id`)
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (14.5ms)[0m  [1m[35m
+	DROP
+	DATABASE IF EXISTS `app_test`[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	CREATE
+	DATABASE `app_test` DEFAULT CHARACTER
+SET
+	`utf8`[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `board_tag_relations` CASCADE[0m
+  [1m[35m (14.2ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`board_tag_relations` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`board_id` INT
+			,`tag_id` INT
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,INDEX `index_board_tag_relations_on_board_id`
+				USING btree (`board_id`)
+			,INDEX `index_board_tag_relations_on_tag_id`
+				USING btree (`tag_id`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `boards` CASCADE[0m
+  [1m[35m (10.1ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`boards` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255)
+			,`title` VARCHAR (255)
+			,`body` text
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `comments` CASCADE[0m
+  [1m[35m (12.3ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`comments` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`board_id` INT
+			,`name` VARCHAR (255) NOT NULL
+			,`comment` text NOT NULL
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,INDEX `index_comments_on_board_id`
+				USING btree (`board_id`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `tags` CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`tags` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255) NOT NULL
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `users` CASCADE[0m
+  [1m[35m (11.7ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`users` (
+			`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255) NOT NULL
+			,`password_digest` VARCHAR (255)
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,UNIQUE INDEX `index_users_on_name`
+				USING btree (`name`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (20.5ms)[0m  [1m[35m
+	ALTER TABLE
+	`board_tag_relations` ADD CONSTRAINT `fk_rails_1eb07359f9` FOREIGN KEY (`board_id`) REFERENCES `boards` (`id`)
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (25.7ms)[0m  [1m[35m
+	DROP
+	DATABASE IF EXISTS `app_test`[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	CREATE
+	DATABASE `app_test` DEFAULT CHARACTER
+SET
+	`utf8`[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `board_tag_relations` CASCADE[0m
+  [1m[35m (13.3ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`board_tag_relations` (
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`board_id` INT
+			,`tag_id` INT
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,INDEX `index_board_tag_relations_on_board_id` (`board_id`)
+			,INDEX `index_board_tag_relations_on_tag_id` (`tag_id`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.6ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `boards` CASCADE[0m
+  [1m[35m (8.9ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`boards` (
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255)
+			,`title` VARCHAR (255)
+			,`body` text
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `comments` CASCADE[0m
+  [1m[35m (10.3ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`comments` (
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`board_id` INT
+			,`name` VARCHAR (255) NOT NULL
+			,`comment` text NOT NULL
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,INDEX `index_comments_on_board_id` (`board_id`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `tags` CASCADE[0m
+  [1m[35m (10.5ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`tags` (
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255) NOT NULL
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (0.5ms)[0m  [1m[35m
+	DROP
+	TABLE
+		IF EXISTS `users` CASCADE[0m
+  [1m[35m (10.7ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`users` (
+			`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+			,`name` VARCHAR (255) NOT NULL
+			,`password_digest` VARCHAR (255)
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+			,`birthday` DATE
+			,UNIQUE INDEX `index_users_on_name` (`name`)
+		) ENGINE = InnoDB DEFAULT CHARSET = utf8[0m
+  [1m[35m (28.6ms)[0m  [1m[35m
+	ALTER TABLE
+	`board_tag_relations` ADD CONSTRAINT `fk_rails_1eb07359f9` FOREIGN KEY (`board_id`) REFERENCES `boards` (`id`)
+[0m
+  [1m[35m (22.1ms)[0m  [1m[35m
+	ALTER TABLE
+	`board_tag_relations` ADD CONSTRAINT `fk_rails_88d29ca25f` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`)
+[0m
+  [1m[35m (15.5ms)[0m  [1m[35m
+	ALTER TABLE
+	`comments` ADD CONSTRAINT `fk_rails_9510ce0f70` FOREIGN KEY (`board_id`) REFERENCES `boards` (`id`)
+[0m
+  [1m[35m (8.6ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`schema_migrations` (
+			`version` VARCHAR (255) NOT NULL PRIMARY KEY
+		)[0m
+  [1m[35m (0.4ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[32m
+	INSERT
+	INTO
+		`schema_migrations` (version)
+	VALUES (20191016104726)[0m
+  [1m[35m (1.6ms)[0m  [1m[32m
+	INSERT
+	INTO
+		`schema_migrations` (version)
+	VALUES (20191016025139)
+	,(20191016025033)
+	,(20191013050559)
+	,(20191016041140)
+	,(20191008084912)
+;
+[0m
+  [1m[35m (8.8ms)[0m  [1m[35m
+	CREATE
+	TABLE
+		`ar_internal_metadata` (
+			`key` VARCHAR (255) NOT NULL PRIMARY KEY
+			,`value` VARCHAR (255)
+			,`created_at` datetime NOT NULL
+			,`updated_at` datetime NOT NULL
+		)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34m
+	SELECT
+		`ar_internal_metadata`. *
+	FROM
+		`ar_internal_metadata`
+	WHERE
+		`ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32m
+	INSERT
+	INTO
+		`ar_internal_metadata` (
+			`key`
+			,`value`
+			,`created_at`
+			,`updated_at`
+		)
+	VALUES (
+		'environment'
+		,'test'
+		,'2019-10-16 10:53:03'
+		,'2019-10-16 10:53:03'
+	)[0m
+  [1m[35m (2.1ms)[0m  [1m[35m
+	COMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34m
+	SELECT
+		`ar_internal_metadata`. *
+	FROM
+		`ar_internal_metadata`
+	WHERE
+		`ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	COMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 61ms (Views: 19.7ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 61ms (Views: 18.6ms | ActiveRecord: 1.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34m
+	SELECT
+		COUNT( * )
+	FROM
+		`users`[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"user"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'user' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 329ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"user"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'user' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 83ms (Views: 26.6ms | ActiveRecord: 2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered users/new.html.erb within layouts/application (0.4ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35m
+	BEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34m
+	SELECT
+		COUNT( * )
+	FROM
+		`users`[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"user"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.4ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'user' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 359ms (ActiveRecord: 1.4ms)
+  [1m[35m (0.4ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"user"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'user' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.4ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"ユーザー１"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'ユーザー１' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 316ms (ActiveRecord: 2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"ユーザー１"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'ユーザー１' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"ユーザー１"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'ユーザー１' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SET
+NAMES utf8
+,@@SESSION.sql_mode = CONCAT( CONCAT( @@sql_mode ,',STRICT_ALL_TABLES' ) ,',NO_AUTO_VALUE_ON_ZERO' )
+,@@SESSION.sql_auto_is_null = 0
+,@@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+	SELECT
+		`schema_migrations`.`version`
+	FROM
+		`schema_migrations`
+	ORDER BY
+		`schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"ユーザー１"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'ユーザー１' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 2.6ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"ユーザー１"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.2ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'ユーザー１' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35m
+	BEGIN[0m
+Processing by UsersController#create as HTML
+  Parameters: 
+{
+    "user"[0;37m => [0m{
+                         "name"[0;37m => [0m[0;33m"ユーザー１"[0m,
+                     "password"[0;37m => [0m[0;33m"[FILTERED]"[0m,
+        "password_confirmation"[0;37m => [0m[0;33m"[FILTERED]"[0m
+    }
+}
+  [1m[35m (0.3ms)[0m  [1m[35m
+	SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34m
+	SELECT
+		1 AS one
+	FROM
+		`users`
+	WHERE
+		`users`.`name` = BINARY 'ユーザー１' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to 
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[31m
+	ROLLBACK[0m
